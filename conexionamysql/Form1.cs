@@ -14,7 +14,10 @@ namespace conexionamysql
     public partial class Form1 : Form
     {
 
-        
+        private List<Producto> mProductos;
+        private Producto mProducto;
+
+
 
         public Form1()
         {
@@ -58,7 +61,14 @@ namespace conexionamysql
             {
                 conexionBD.Close();
             }
+        }
 
+        private void cargarProductos(String filtro = " ")
+        {
+
+            dgvProd.Rows.Clear();
+            dgvProd.Refresh();
+            mProductos.Clear();
 
 
 
@@ -66,6 +76,8 @@ namespace conexionamysql
 
 
         }
+    
+
 
         private void label1_Click(object sender, EventArgs e)
         {
